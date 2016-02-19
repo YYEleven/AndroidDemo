@@ -113,18 +113,18 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view,"FAB",Snackbar.LENGTH_LONG).show();
-                Snackbar.make(view,"FAB",Snackbar.LENGTH_LONG).setAction("cancel", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                }).setAction("OK", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                }).show();
+                Snackbar.make(view,"FAB",Snackbar.LENGTH_SHORT).show();
+//                Snackbar.make(view,"FAB",Snackbar.LENGTH_LONG).setAction("cancel", new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                    }
+//                }).setAction("OK", new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                    }
+//                }).show();
             }
         });
     }

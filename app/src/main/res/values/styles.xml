@@ -8,5 +8,6 @@
         <item name="colorPrimary">@color/material_deep_teal_500</item>
         <item name="colorPrimaryDark">@color/material_blue_700</item>
         <item name="colorAccent">@color/material_green_A200</item>
+        <item name="android:textColorPrimary">@color/main_text_color</item>
     </style>
 </resources>

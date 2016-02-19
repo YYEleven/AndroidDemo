@@ -5,9 +5,11 @@ import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private FloatingActionButton fab;
+    private CollapsingToolbarLayout collapsing_toolbar_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,22 +79,26 @@ public class MainActivity extends AppCompatActivity {
                 ft = getFragmentManager().beginTransaction();
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
-//                        toolbar.setTitle(menuItem.getTitle());
+                        menuItem.setChecked(true);
+                        collapsing_toolbar_layout.setTitle(menuItem.getTitle());
                         ft.replace(R.id.id_content_container,new MainFragment());
                         ft.commit();
                     break;
                     case R.id.nav_messages:
-//                        toolbar.setTitle("Messages");
+                        collapsing_toolbar_layout.setTitle(menuItem.getTitle());
+                        menuItem.setChecked(true);
                         ft.replace(R.id.id_content_container,new MessageFragment());
                         ft.commit();
                         break;
                     case R.id.nav_friends:
-//                        toolbar.setTitle("Friends");
+                        collapsing_toolbar_layout.setTitle(menuItem.getTitle());
+                        menuItem.setChecked(true);
                         ft.replace(R.id.id_content_container,new FriendFragment());
                         ft.commit();
                         break;
                     case R.id.nav_discussion:
-//                        toolbar.setTitle("Discussion");
+                        collapsing_toolbar_layout.setTitle(menuItem.getTitle());
+                        menuItem.setChecked(true);
                         ft.replace(R.id.id_content_container,new DiscussionFragment());
                         ft.commit();
                         break;
@@ -103,8 +110,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
-                toolbar.setTitle(menuItem.getTitle());
-                menuItem.setChecked(true);
+
                 mDrawerLayout.closeDrawers();
                 return true;
             }
@@ -127,6 +133,10 @@ public class MainActivity extends AppCompatActivity {
 //                }).show();
             }
         });
+        collapsing_toolbar_layout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);
+        collapsing_toolbar_layout.setExpandedTitleColor( ContextCompat.getColor(MainActivity.this, R.color.titile_expand_color));
+        collapsing_toolbar_layout.setCollapsedTitleTextColor(ContextCompat.getColor(MainActivity.this, R.color.title_closed_color));
+       ;
     }
 
     @Override

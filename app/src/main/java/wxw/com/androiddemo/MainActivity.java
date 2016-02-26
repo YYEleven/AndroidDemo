@@ -1,7 +1,5 @@
 package wxw.com.androiddemo;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -33,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 //    private TextView left_tv;
     private CursorLoaderListFragment cursorLoaderListFragment;
     private NavigationView navigation;
-    private FragmentManager fm;
-    private FragmentTransaction ft;
+    private android.support.v4.app.FragmentManager fm;
+    private android.support.v4.app.FragmentTransaction ft;
     private FloatingActionButton fab;
     private CollapsingToolbarLayout collapsing_toolbar_layout;
     @Override
@@ -76,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 if(menuItem.isChecked()){
                     return true;
                 }
-                ft = getFragmentManager().beginTransaction();
+//                ft = getFragmentManager().beginTransaction();
+                ft = getSupportFragmentManager().beginTransaction();
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
                         menuItem.setChecked(true);
@@ -147,10 +146,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFragment() {
 
-         fm = getFragmentManager();
+//         fm = getFragmentManager();
+            fm = getSupportFragmentManager();
          ft = fm.beginTransaction();
+
         mainFragment = new MainFragment();
-        cursorLoaderListFragment = new CursorLoaderListFragment();
+//        cursorLoaderListFragment = new CursorLoaderListFragment();
         ft.replace(R.id.id_content_container, mainFragment);
         ft.commit();
 

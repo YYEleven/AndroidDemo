@@ -1,7 +1,9 @@
 package wxw.com.androiddemo;
 
-import android.app.Fragment;
+//import android.app.Fragment;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;

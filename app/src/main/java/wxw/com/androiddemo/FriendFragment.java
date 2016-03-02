@@ -1,6 +1,7 @@
 package wxw.com.androiddemo;
 
 //import android.app.Fragment;
+import android.app.DownloadManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.annotation.Nullable;
@@ -9,6 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
+import java.io.IOException;
 
 /**
  * Created by Eleven on 16/2/18.
@@ -28,4 +37,23 @@ public class FriendFragment extends Fragment {
         });
         return view;
     }
+
+    public void okHttpTest(){
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url("").build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+
+            }
+        });
+
+    }
+
 }

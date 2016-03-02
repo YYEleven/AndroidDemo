@@ -12,22 +12,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import wxw.com.androiddemo.adapter.MyRecyclerViewAdapter;
 
 /**
  * Created by Eleven on 16/2/18.
  */
 public class MessageFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, MyRecyclerViewAdapter.OnItemClickListener {
-    private SwipeRefreshLayout mSwipeRefreshLayout;
-    private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter mRecyclerViewAdapter;
+    @Bind(R.id.id_swiperefreshlayout)
+    SwipeRefreshLayout mSwipeRefreshLayout;
+    @Bind(R.id.id_recyclerview)
+     RecyclerView mRecyclerView;
+     MyRecyclerViewAdapter mRecyclerViewAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.message_layout, null);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.id_swiperefreshlayout);
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.id_recyclerview);
+        ButterKnife.bind(this,view);
+//        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.id_swiperefreshlayout);
+//        mRecyclerView = (RecyclerView) view.findViewById(R.id.id_recyclerview);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.main_blue_light, R.color.main_blue_dark);
         mSwipeRefreshLayout.setOnRefreshListener(this);
 //        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

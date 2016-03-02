@@ -10,4 +10,6 @@
     <color name="main_white">#FFFFFF</color>
     <color name="titile_expand_color">#FF18BA7F</color>
     <color name="title_closed_color">#ffbab993</color>
+    <color name="red">#FFF40115</color>
+    <color name="blue">#FF0162F4</color>
 </resources>

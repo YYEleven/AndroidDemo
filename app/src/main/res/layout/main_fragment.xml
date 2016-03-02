@@ -14,6 +14,17 @@
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:colorControlHighlight="@android:color/holo_red_dark"
         android:text="发送广播"
+        />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/touxiang"
+        android:visibility="gone"
         />
 </LinearLayout>

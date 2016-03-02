@@ -18,6 +18,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 
 public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mActionBarDrawerToggle;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
         setContentView(R.layout.activity_main);
 //        left_tv = (TextView) findViewById(R.id.left_tv);
         //状态栏
@@ -99,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
                         collapsing_toolbar_layout.setTitle(menuItem.getTitle());
                         menuItem.setChecked(true);
                         ft.replace(R.id.id_content_container,new DiscussionFragment());
+                        ft.commit();
+                        break;
+                    case R.id.nav_setting:
+                        collapsing_toolbar_layout.setTitle(menuItem.getTitle());
+                        menuItem.setChecked(true);
+                        ft.replace(R.id.id_content_container, new SettingFragment());
                         ft.commit();
                         break;
                     case R.id.sub1:

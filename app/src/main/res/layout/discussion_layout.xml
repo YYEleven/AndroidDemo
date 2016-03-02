@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/input_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextInputLayout控件"
-        />
+        android:text="TextInputLayout控件" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/input_show"
-        >
+        android:layout_below="@+id/input_show">
 
         <EditText
             android:id="@+id/et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="输入密码"/>
+            android:hint="输入密码" />
     </android.support.design.widget.TextInputLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/id_drawe"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/inputLayout"
+        fresco:fadeDuration="300"
+        fresco:roundingBorderWidth="1dp"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/red"
+        />
 
 </RelativeLayout>

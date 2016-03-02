@@ -5,10 +5,13 @@ package wxw.com.androiddemo;
 
 //import android.app.Fragment;
 
+import android.animation.Animator;
+import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,8 +19,10 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -30,6 +35,8 @@ public class MainFragment extends Fragment {
     private TextView tv;
     private Context context;
     private IntentFilter intentFilter;
+    private ImageView image_view;
+    private Animator anim;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,7 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,15 +69,47 @@ public class MainFragment extends Fragment {
 //                context.sendBroadcast(new Intent("test"));
 
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Dialog");
-                builder.setMessage("少数派客户端");
-                builder.setPositiveButton("OK", null);
-                builder.setNegativeButton("Cancel", null);
-                builder.show();
+//                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//                builder.setTitle("Dialog");
+//                builder.setMessage("少数派客户端");
+//                builder.setPositiveButton("OK", null);
+//                builder.setNegativeButton("Cancel", null);
+//                builder.show();
+                image_view.setVisibility(View.GONE);
+                int cx = (image_view.getLeft() + image_view.getRight()) / 2;
+                int cy = (image_view.getTop() + image_view.getBottom()) / 2;
+                int finalRadius = Math.max(image_view.getWidth(), image_view.getHeight());
+                anim = ViewAnimationUtils.createCircularReveal(image_view, cx, cy, finalRadius, 0);
+                anim.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animator) {
+                        image_view.setVisibility(View.VISIBLE);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animator) {
+
+                    }
+                });
+//                image_view.setVisibility(View.VISIBLE);
+                anim.start();
             }
 
         });
+        image_view = (ImageView) view.findViewById(R.id.image_view);
+
+
+
         return view;
     }
 

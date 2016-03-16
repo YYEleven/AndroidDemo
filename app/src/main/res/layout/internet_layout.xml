@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络访问"/>
+
+    <Button
+        android:id="@+id/webservice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WebService"
+        />
+    <Button
+        android:id="@+id/btn_okhttp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OkHttp_同步GET"
+        />
+
+    <Button
+        android:id="@+id/btn_okhttp_asyget"
+        android:text="OkHttp_异步GET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_okhttp_asypost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OKHttp_asypost"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_internet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
+</LinearLayout>

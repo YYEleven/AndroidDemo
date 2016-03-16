@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
+    <Button
+        android:id="@+id/sax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAX解析"
+        />
+
+    <Button
+        android:id="@+id/pull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PULL解析"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=" 区别为：SAX解析器的工作方式是自动将事件推入事件处理器进行处理，因此你不能控制事件的处理主动结束；
+        而Pull解析器的工作方式为允许你的应用程序代码主动从解析器中获取事件，正因为是主动获取事件，
+        因此可以在满足了需要的条件后不再获取事件，结束解析。
+        你随便找个sax和pull的例子比较一下就可以发现，pull是一个while循环，随时可以跳出，而sax不是，sax是只要解析了，就必须解析完成。"
+        />
 </LinearLayout>

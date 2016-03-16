@@ -22,6 +22,10 @@
             android:id="@+id/nav_setting"
             android:icon="@drawable/menu5"
             android:title="Discussion" />
+        <item
+            android:id="@+id/nav_internet"
+            android:icon="@drawable/menu5"
+            android:title="Internet" />
     </group>
     <item android:title="Sub items">
         <menu>

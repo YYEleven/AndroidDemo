@@ -34,5 +34,20 @@
         fresco:roundAsCircle="true"
         fresco:roundingBorderColor="@color/red"
         />
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/id_drawe2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/id_drawe"
+        fresco:roundedCornerRadius="55dp"
+        fresco:roundBottomLeft="false"
+        />
 
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/id_drawe3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@+id/id_drawe2"
+        android:layout_below="@+id/id_drawe"
+        />
 </RelativeLayout>

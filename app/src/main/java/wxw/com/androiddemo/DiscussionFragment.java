@@ -36,7 +36,7 @@ import wxw.com.androiddemo.adapter.DiscussionTextWatcher;
 public class DiscussionFragment extends Fragment {
     private TextInputLayout inputLayout;
     private EditText et;
-    private SimpleDraweeView id_drawe;
+    private SimpleDraweeView id_drawe,id_drawe2,id_drawe3;
     ControllerListener controllerListener = new ControllerListener() {
         @Override
         public void onSubmit(String id, Object callerContext) {
@@ -80,6 +80,8 @@ public class DiscussionFragment extends Fragment {
         inputLayout.getEditText().addTextChangedListener(new DiscussionTextWatcher(inputLayout,
                 "用户名长度不能小于6位"));
         id_drawe = (SimpleDraweeView) view.findViewById(R.id.id_drawe);
+        id_drawe2 = (SimpleDraweeView) view.findViewById(R.id.id_drawe2);
+        id_drawe3 = (SimpleDraweeView) view.findViewById(R.id.id_drawe3);
         Uri uri = Uri.parse("https://raw.githubusercontent" +
                 ".com/facebook/fresco/gh-pages/static/fresco-logo.png");
 //        id_drawe.setImageURI(uri);
@@ -94,6 +96,8 @@ public class DiscussionFragment extends Fragment {
                 .setImageRequest(request)
                 .build();
         id_drawe.setController(controller);
+        id_drawe2.setImageURI(Uri.parse("http://img0.bdstatic.com/img/image/77a483d72a2d16264e65858374ab70151409117959.jpg"));
+        id_drawe3.setImageURI(Uri.parse("http://img0.bdstatic.com/img/image/a4602ed3a2c98399cd48917370f00d1e1408098579.jpg"));
         return view;
     }
 }

@@ -1,6 +1,7 @@
 package wxw.com.androiddemo;
 
 //import android.app.Fragment;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
@@ -60,10 +61,11 @@ public class MessageFragment extends Fragment implements SwipeRefreshLayout.OnRe
     @Override
     public void onItemClick(View view, int position) {
 
+        Snackbar.make(view,"点击了",Snackbar.LENGTH_LONG).show();
     }
 
     @Override
     public void onItemLongClick(View view, int position) {
-
+        Snackbar.make(view,"长按了",Snackbar.LENGTH_LONG).show();
     }
 }
